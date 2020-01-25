@@ -2,13 +2,14 @@ v1 ------------------
 create project folder - done
 add on git - done
 install npm - done
-get all useful resources
-public folder contain all static page (because all are static)
+get all useful resources -done
+public folder contain all static page (because all are static) - done
 file in publc - 
-[html] index flower1 flower2 guestbook (flower name same as given)
-styles / [css] styles for all web pages (most things we can reuse)
-js / [js] index.js and guestbook.js
-resources folder contain google drive folder content
+[html] index flower1 flower2 guest-book (flower name same as given) - done
+styles / [css] styles for all web pages (most things we can reuse) -done
+js / [js] index.js - done
+resources folder contain google drive folder content -done
+Code the requirements
 
 v2 -------------------
 create server which can server all static pages
