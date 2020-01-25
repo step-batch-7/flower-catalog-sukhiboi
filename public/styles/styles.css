@@ -85,3 +85,20 @@ body {
 .margin-top {
   margin-top: 10px;
 }
+
+.comment {
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.comment .name {
+  font-weight: 600;
+}
+
+.comment .time {
+  font-weight: 600;
+}
+
+.comment > p {
+}
