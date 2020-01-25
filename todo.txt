@@ -2,7 +2,7 @@ v1 ------------------
 create project folder - done
 add on git - done
 install npm - done
-get all resources
+get all useful resources
 public folder contain all static page (because all are static)
 file in publc - 
 [html] index flower1 flower2 guestbook (flower name same as given)
