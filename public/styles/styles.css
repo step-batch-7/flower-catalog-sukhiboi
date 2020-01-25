@@ -81,3 +81,7 @@ body {
   border-bottom: 2px solid grey;
   padding-bottom: 20px;
 }
+
+.margin-top {
+  margin-top: 10px;
+}
