@@ -6,7 +6,6 @@ body {
 
 .header {
   padding: 20px 0;
-  font-size: 32px;
   border-bottom: 2px solid grey;
   text-transform: capitalize;
   color: #f3a718;
@@ -14,6 +13,7 @@ body {
 
 .header > span {
   margin: 0 0 0 74%;
+  font-size: 32px;
   font-weight: 600;
 }
 
@@ -70,4 +70,14 @@ body {
 
 .hide-overflow {
   overflow: hidden;
+}
+
+.no-border {
+  border: none;
+}
+
+.comment-form {
+  margin-left: 10px;
+  border-bottom: 2px solid grey;
+  padding-bottom: 20px;
 }
