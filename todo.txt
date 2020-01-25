@@ -1,4 +1,4 @@
-v1 ------------------
+v1 ------------------ -done
 create project folder - done
 add on git - done
 install npm - done
@@ -9,7 +9,7 @@ file in publc -
 styles / [css] styles for all web pages (most things we can reuse) -done
 js / [js] index.js - done
 resources folder contain google drive folder content -done
-Code the requirements
+Code the requirements -done
 
 v2 -------------------
 create server which can server all static pages
