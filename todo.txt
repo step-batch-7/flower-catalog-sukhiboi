@@ -1,7 +1,7 @@
 v1 ------------------
 create project folder - done
 add on git - done
-install npm 
+install npm - done
 get all resources
 public folder contain all static page (because all are static)
 file in publc - 
