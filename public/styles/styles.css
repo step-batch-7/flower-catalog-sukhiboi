@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.header {
+  padding: 20px 0;
+  font-size: 32px;
+  border-bottom: 2px solid grey;
+  text-transform: capitalize;
+  color: #f3a718;
+}
+
+.header > span {
+  margin: 0 0 0 74%;
+  font-weight: 600;
+}
+
+.container {
+  margin: 10px;
+}
+
+.container > div {
+  margin: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.big-image {
+  border: 1px solid black;
+}
+
+.content-box {
+  width: 100%;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.small-container {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.water-pot {
+  position: relative;
+  left: 60%;
+}
