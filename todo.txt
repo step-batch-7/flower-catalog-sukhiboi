@@ -15,4 +15,4 @@ v2 -------------------
 create server which can server all static pages - done
 
 v3 -------------------
-add mechanism to save records of the user comment and show all comments when user click on submit
+add mechanism to save records of the user comment and show all comments when user click on submit - done
