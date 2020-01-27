@@ -1,5 +1,6 @@
 const { Server } = require('net');
-const { processRequest } = require('./lib/responseHandler');
+const { processRequest, dataStorePath } = require('./lib/responseHandler');
+const { writeFileSync } = require('fs');
 
 const server = new Server();
 const PORT = 8000;
@@ -7,6 +8,7 @@ const PORT = 8000;
 server.listen(process.argv[2] || PORT);
 
 server.on('listening', () => {
+  writeFileSync(dataStorePath, '[]');
   const { address, family, port } = server.address();
   console.log(`\nListening on port ${address}:${port} with ${family}\n`);
 });
