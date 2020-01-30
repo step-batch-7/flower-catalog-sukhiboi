@@ -7,12 +7,15 @@ const {
   serveStaticPage,
   dataStorePath
 } = require('./lib/handlers');
+const { bodyParser } = require('./lib/middlewares');
 const { Router } = require('./lib/router');
 
 const dataStoreExists = fileExists(dataStorePath);
 if (!dataStoreExists) saveContent(dataStorePath, '[]');
 
 const router = new Router();
+
+router.use(bodyParser);
 
 router.get('', serveStaticPage);
 router.get('/', serveStaticPage);
