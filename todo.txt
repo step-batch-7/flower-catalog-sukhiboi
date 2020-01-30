@@ -21,4 +21,4 @@ add mechanism to save records of the user comment and show all comments when use
 -> parseBody function should parse body not only read and give data
 -> see what you can do with convert to html fucntion of comment class
 -> handler.js should have handlers. CHeck what you can do with addCommentsToTemplate and save Comment, move them to commment.js
--> change the addCommentsToTemplate's reduce to map
+-> change the addCommentsToTemplate's reduce to map -done
