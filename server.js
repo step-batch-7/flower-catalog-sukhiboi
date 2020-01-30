@@ -6,7 +6,7 @@ const {
   guestBookHandler,
   serveStaticPage,
   dataStorePath
-} = require('./lib/responseHandler');
+} = require('./lib/handlers');
 const { Router } = require('./lib/router');
 
 const dataStoreExists = fileExists(dataStorePath);
