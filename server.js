@@ -4,10 +4,10 @@ const {
   err404,
   serveTemplate,
   guestBookHandler,
-  serveStaticPage,
-  dataStorePath
+  serveStaticPage
 } = require('./lib/handlers');
 const { bodyParser } = require('./lib/middlewares');
+const { dataStorePath } = require('./config.js');
 const { Router } = require('./lib/router');
 
 const dataStoreExists = fileExists(dataStorePath);
