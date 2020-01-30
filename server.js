@@ -7,7 +7,7 @@ const {
   serveStaticPage
 } = require('./lib/handlers');
 const { bodyParser } = require('./lib/middlewares');
-const { dataStorePath } = require('./config.js');
+const { dataStorePath, PORT } = require('./config.js');
 const { Router } = require('./lib/router');
 
 const dataStoreExists = fileExists(dataStorePath);
@@ -28,4 +28,4 @@ router.post('', err404);
 const ROUTER = router.serve.bind(router);
 
 const server = http.Server(ROUTER);
-server.listen(process.argv[2] || 8000);
+server.listen(PORT);
