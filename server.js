@@ -1,5 +1,5 @@
 const http = require('http');
-const { writeFileSync, existsSync } = require('fs');
+const { fileExists, saveContent } = require('./lib/fileOperations');
 const {
   err404,
   serveTemplate,
@@ -9,8 +9,8 @@ const {
 } = require('./lib/responseHandler');
 const { Router } = require('./lib/router');
 
-const dataStoreExists = existsSync(dataStorePath);
-if (!dataStoreExists) writeFileSync(dataStorePath, '[]');
+const dataStoreExists = fileExists(dataStorePath);
+if (!dataStoreExists) saveContent(dataStorePath, '[]');
 
 const router = new Router();
 
