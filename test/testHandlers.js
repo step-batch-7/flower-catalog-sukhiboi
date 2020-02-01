@@ -48,3 +48,11 @@ describe('#GET /guest-book', () => {
       .expect(/<title>Guest Book<\/title>/, done);
   });
 });
+
+describe('#GET /bad', () => {
+  it('should response back with file not found page', done => {
+    request(app)
+      .get('/bad')
+      .expect(404, done);
+  });
+});
