@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "export DATASTORE=/Users/step11/data/mainData/temp/flowerapp/FlowerCatalogApp/test/database/DATASTORE.json; nyc mocha"
+    "test": "(export DATASTORE=/Users/step11/data/mainData/temp/flowerapp/FlowerCatalogApp/test/database/DATASTORE.json; nyc mocha)"
   },
   "author": "",
   "license": "ISC",
