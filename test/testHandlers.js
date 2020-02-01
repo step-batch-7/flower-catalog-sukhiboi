@@ -98,7 +98,7 @@ describe('POST /guest-book when there are no previous comments', () => {
       .set('Accept', 'text/html, text/css, application/script')
       .expect(200)
       .expect('Content-Type', 'text/html')
-      .expect('Content-Length', '985')
+      .expect('Content-Length', '984')
       .expect(/<title>Guest Book<\/title>/, done);
   });
 });
@@ -119,7 +119,7 @@ describe('POST /guest-book when there are previous comments', () => {
       .set('Accept', 'text/html, text/css, application/script')
       .expect(200)
       .expect('Content-Type', 'text/html')
-      .expect('Content-Length', '1208')
+      .expect('Content-Length', '1206')
       .expect(/I am always awesome/, done);
   });
 });
