@@ -5,7 +5,7 @@ describe('#GET /', () => {
   it('should response back with index page', done => {
     request(app)
       .get('/')
-      .set('Accept', 'text/html, text/css, application/js')
+      .set('Accept', 'text/html, text/css, application/script')
       .expect(200)
       .expect('Content-Type', 'text/html')
       .expect('Content-Length', '1221')
@@ -54,5 +54,29 @@ describe('#GET /bad', () => {
     request(app)
       .get('/bad')
       .expect(404, done);
+  });
+});
+
+describe('#GET /styles/styles.css', () => {
+  it('should response back with styles.css', done => {
+    request(app)
+      .get('/styles/styles.css')
+      .set('Accept', 'text/css')
+      .expect(200)
+      .expect('Content-Type', 'text/css')
+      .expect('Content-Length', '1162')
+      .expect(/e-overflow/, done);
+  });
+});
+
+describe('#GET /js/index.css', () => {
+  it('should response back with styles.css', done => {
+    request(app)
+      .get('/js/index.js')
+      .set('Accept', 'application/script')
+      .expect(200)
+      .expect('Content-Type', 'application/script')
+      .expect('Content-Length', '208')
+      .expect(/Pot.classList.ad/, done);
   });
 });
