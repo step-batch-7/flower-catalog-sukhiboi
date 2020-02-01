@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "(export DATASTORE=/Users/step11/data/mainData/temp/flowerapp/FlowerCatalogApp/DATASTORE.json; node server.js)",
     "test": "(export DATASTORE=/Users/step11/data/mainData/temp/flowerapp/FlowerCatalogApp/test/database/DATASTORE.json; nyc mocha)"
   },
   "author": "",
