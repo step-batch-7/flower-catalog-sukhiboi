@@ -87,11 +87,11 @@ describe('GET /js/index.css', () => {
   });
 });
 
-describe('POST /guest-book when there are no previous comments', () => {
+describe('POST /guest-book when there are no previous commentList', () => {
   before(done => {
     writeFile(dataStorePath, '[]', done);
   });
-  it('should response back with updated comments', done => {
+  it('should response back with updated commentList', done => {
     request(app)
       .post('/guest-book.html')
       .send(`name=sukhiboi&content=I+am+awesome`)
@@ -103,7 +103,7 @@ describe('POST /guest-book when there are no previous comments', () => {
   });
 });
 
-describe('POST /guest-book when there are previous comments', () => {
+describe('POST /guest-book when there are previous commentList', () => {
   before(done => {
     const comment = {
       name: 'sukhiboi',
@@ -112,7 +112,7 @@ describe('POST /guest-book when there are previous comments', () => {
     };
     writeFile(dataStorePath, `[${JSON.stringify(comment)}]`, done);
   });
-  it('should response back with updated comments', done => {
+  it('should response back with updated commentList', done => {
     request(app)
       .post('/guest-book.html')
       .send(`name=shankar&content=I+am+awesome`)
