@@ -26,7 +26,7 @@ describe('#GET /abeliophyllum', () => {
 });
 
 describe('#GET /ageratum', () => {
-  it('should response back with abeliophyllum page', done => {
+  it('should response back with ageratum page', done => {
     request(app)
       .get('/ageratum.html')
       .set('Accept', 'text/html, text/css')
