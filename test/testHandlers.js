@@ -1,7 +1,13 @@
+const { writeFile } = require('fs');
 const request = require('supertest');
+const { dataStorePath } = require('./../config');
 const { app } = require('./../lib/app');
 
-describe('#GET /', () => {
+afterEach(done => {
+  writeFile(dataStorePath, '[]', done);
+});
+
+describe('GET /', () => {
   it('should response back with index page', done => {
     request(app)
       .get('/')
@@ -13,7 +19,7 @@ describe('#GET /', () => {
   });
 });
 
-describe('#GET /abeliophyllum', () => {
+describe('GET /abeliophyllum', () => {
   it('should response back with abeliophyllum page', done => {
     request(app)
       .get('/abeliophyllum.html')
@@ -25,7 +31,7 @@ describe('#GET /abeliophyllum', () => {
   });
 });
 
-describe('#GET /ageratum', () => {
+describe('GET /ageratum', () => {
   it('should response back with ageratum page', done => {
     request(app)
       .get('/ageratum.html')
@@ -37,19 +43,19 @@ describe('#GET /ageratum', () => {
   });
 });
 
-describe('#GET /guest-book', () => {
+describe('GET /guest-book', () => {
   it('should response back with guest-book page', done => {
     request(app)
       .get('/guest-book.html')
       .set('Accept', 'text/html, text/css')
       .expect(200)
       .expect('Content-Type', 'text/html')
-      .expect('Content-Length', '1602')
+      .expect('Content-Length', '769')
       .expect(/<title>Guest Book<\/title>/, done);
   });
 });
 
-describe('#GET /bad', () => {
+describe('GET /bad', () => {
   it('should response back with file not found page', done => {
     request(app)
       .get('/bad')
@@ -57,7 +63,7 @@ describe('#GET /bad', () => {
   });
 });
 
-describe('#GET /styles/styles.css', () => {
+describe('GET /styles/styles.css', () => {
   it('should response back with styles.css', done => {
     request(app)
       .get('/styles/styles.css')
@@ -69,7 +75,7 @@ describe('#GET /styles/styles.css', () => {
   });
 });
 
-describe('#GET /js/index.css', () => {
+describe('GET /js/index.css', () => {
   it('should response back with styles.css', done => {
     request(app)
       .get('/js/index.js')
@@ -78,5 +84,42 @@ describe('#GET /js/index.css', () => {
       .expect('Content-Type', 'application/script')
       .expect('Content-Length', '208')
       .expect(/Pot.classList.ad/, done);
+  });
+});
+
+describe('POST /guest-book when there are no previous comments', () => {
+  before(done => {
+    writeFile(dataStorePath, '[]', done);
+  });
+  it('should response back with updated comments', done => {
+    request(app)
+      .post('/guest-book.html')
+      .send(`name=sukhiboi&content=I+am+awesome`)
+      .set('Accept', 'text/html, text/css, application/script')
+      .expect(200)
+      .expect('Content-Type', 'text/html')
+      .expect('Content-Length', '985')
+      .expect(/<title>Guest Book<\/title>/, done);
+  });
+});
+
+describe('POST /guest-book when there are previous comments', () => {
+  before(done => {
+    const comment = {
+      name: 'sukhiboi',
+      content: 'I am always awesome',
+      date: new Date()
+    };
+    writeFile(dataStorePath, `[${JSON.stringify(comment)}]`, done);
+  });
+  it('should response back with updated comments', done => {
+    request(app)
+      .post('/guest-book.html')
+      .send(`name=shankar&content=I+am+awesome`)
+      .set('Accept', 'text/html, text/css, application/script')
+      .expect(200)
+      .expect('Content-Type', 'text/html')
+      .expect('Content-Length', '1208')
+      .expect(/I am always awesome/, done);
   });
 });
