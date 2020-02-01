@@ -17,9 +17,9 @@ create server which can server all static pages - done
 v3 -------------------
 add mechanism to save records of the user comment and show all comments when user click on submit - done
 
--> change the object structure of middleware in router.js
--> parseBody function should parse body not only read and give data
--> see what you can do with convert to html fucntion of comment class
+-> change the object structure of middleware in router.js - done
+-> parseBody function should parse body not only read and give data - done
+-> see what you can do with convert to html fucntion of comment class - done
 -> handler.js should have handlers. CHeck what you can do with addCommentsToTemplate and save Comment, move them to commment.js -done
 -> change the addCommentsToTemplate's reduce to map -done
 -> Read comments only once
