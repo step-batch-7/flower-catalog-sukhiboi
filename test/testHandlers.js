@@ -36,3 +36,15 @@ describe('#GET /ageratum', () => {
       .expect(/perennials/, done);
   });
 });
+
+describe('#GET /guest-book', () => {
+  it('should response back with guest-book page', done => {
+    request(app)
+      .get('/guest-book.html')
+      .set('Accept', 'text/html, text/css')
+      .expect(200)
+      .expect('Content-Type', 'text/html')
+      .expect('Content-Length', '1602')
+      .expect(/<title>Guest Book<\/title>/, done);
+  });
+});
