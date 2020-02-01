@@ -87,7 +87,7 @@ describe('GET /js/index.css', () => {
   });
 });
 
-describe('POST /guest-book when there are no previous commentList', () => {
+describe('POST /guest-book when there are no previous comments', () => {
   before(done => {
     writeFile(dataStorePath, '[]', done);
   });
@@ -103,7 +103,7 @@ describe('POST /guest-book when there are no previous commentList', () => {
   });
 });
 
-describe('POST /guest-book when there are previous commentList', () => {
+describe('POST /guest-book when there are previous comments', () => {
   before(done => {
     const comment = {
       name: 'sukhiboi',
