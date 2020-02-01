@@ -8,3 +8,5 @@ if (!dataStoreExists) writeFileSync(dataStorePath, '[]');
 
 const server = http.Server(app);
 server.listen(PORT);
+
+console.log(`Server online, using port ${PORT}\n`)
